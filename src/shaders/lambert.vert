@@ -14,16 +14,11 @@ in vec3 aVertexNormal;
 out vec4 vVertexColor;
 
 void main( void ) {
-    // 法線を計算
     vec3 N = normalize( vec3( uNormalMatrix * vec4( aVertexNormal, 1.0 ) ) );
     vec3 light = vec3( uModelViewMatrix * vec4( uLightDirection, 0.0 ) );
-    // 光線の向きを正規化
     vec3 L = normalize( light );
-    // 法線と反転した光線ベクトルの内積
     float lambertTerm = dot( N, -L );
-    // ランバード反射モデルに基づいた拡散反射色の計算
     vec3 Id = uMaterialDiffuse * uLightDiffuse * lambertTerm;
     vVertexColor = vec4( Id, 1.0 );
-    // 頂点位置を設定
     gl_Position = uProjectionMatrix * uModelViewMatrix * vec4( aVertexPosition, 1.0 );
 }
