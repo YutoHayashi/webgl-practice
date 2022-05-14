@@ -1,11 +1,24 @@
-export type Program = WebGLProgram & {
+export type Locations = {
+
     aVertexPosition: number;
     aVertexNormal: number;
-    uProjectionMatrix: WebGLUniformLocation | null;
-    uModelViewMatrix: WebGLUniformLocation | null;
-    uModelColor: WebGLUniformLocation | null;
-    uLightDirection: WebGLUniformLocation | null;
-    uLightDiffuse: WebGLUniformLocation | null;
-    uMaterialDiffuse: WebGLUniformLocation | null;
-    uNormalMatrix: WebGLUniformLocation | null;
-};
+
+    uShininess: WebGLUniformLocation;
+    uProjectionMatrix: WebGLUniformLocation;
+
+    uModelViewMatrix: WebGLUniformLocation;
+    uModelColor: WebGLUniformLocation;
+
+    uLightPosition: WebGLUniformLocation;
+    uLightDirection: WebGLUniformLocation;
+    uLightAmbient: WebGLUniformLocation;
+    uLightDiffuse: WebGLUniformLocation;
+    uLightSpecular: WebGLUniformLocation;
+
+    uMaterialDiffuse: WebGLUniformLocation;
+    uMaterialAmbient: WebGLUniformLocation;
+    uMaterialSpecular: WebGLUniformLocation;
+
+    uNormalMatrix: WebGLUniformLocation;
+
+}

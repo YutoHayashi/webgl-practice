@@ -1,5 +1,5 @@
-import sphere from './sphere';
-sphere(  );
+import positionLighting from './positionLighting';
+positionLighting(  );
 // import frag from '~/shaders/main.frag';
 // import vert from '~/shaders/main.vert';
 // import './style.scss';
